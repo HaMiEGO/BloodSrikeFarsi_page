@@ -68,11 +68,52 @@
         <span>مدت ۳۰ روزه حجمی ✅</span>
         <span>تست ✅</span>
         <span>پشتیبانی ✅</span>
-        <span>10 gig 20t</span>
-        <span>20 gig 35t</span>
-        <span>30 gig 45t</span>
-        <span>40 gig 55t</span>
-        <span>50 gig 70t</span>
+       <div class="vpn-prices">
+  <span>10 gig <b>20t</b></span>
+  <span>20 gig <b>35t</b></span>
+  <span>30 gig <b>45t</b></span>
+  <span>40 gig <b>55t</b></span>
+  <span>50 gig <b>70t</b></span>
+</div>
+
+<style>
+.vpn-prices {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 1.5em 0;
+  align-items: flex-start;
+}
+.vpn-prices span {
+  display: inline-block;
+  background: linear-gradient(90deg,#f9c846 60%,#ff7e5f 100%);
+  color: #222;
+  font-size: 1.23em;
+  padding: .45em 1.4em .45em 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #fed96b44;
+  font-weight: bold;
+  letter-spacing: .5px;
+  position: relative;
+  overflow: hidden;
+  animation: price-pop 0.9s cubic-bezier(.65,1.7,.4,1.0);
+}
+.vpn-prices span b {
+  color: #c22c2c;
+  margin-right: 8px;
+  font-size: 1.05em;
+  animation: shine 1.5s infinite linear alternate;
+}
+@keyframes price-pop {
+  0% { transform: scale(.7) translateY(40px); opacity: 0; }
+  70% { transform: scale(1.08) translateY(-5px); opacity: 1;}
+  100% { transform: scale(1) translateY(0); opacity: 1;}
+}
+@keyframes shine {
+  from { text-shadow: 0 0 1px #fff, 0 0 10px #ffe66b; }
+  to   { text-shadow: 0 0 8px #ff7e5f, 0 0 16px #ffe66b; }
+}
+</style>
       </div>
       <div style="text-align:center;">
         برای خرید به آیدی زیر در تلگرام پیام بدید 📩👇<br>
