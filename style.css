@@ -4,3 +4,95 @@ body {
   padding: 0;
   font-family: Tahoma, Arial, sans-serif;
   background: #18151e;
+  overflow-x: hidden;
+  position: relative;
+}
+body::before, body::after {
+  content: "";
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+body::before {
+  /* افکت رگه‌های قرمز متحرک */
+  background: repeating-linear-gradient(
+    120deg,
+    rgba(255,0,55,0.14) 0px,
+    rgba(255,0,55,0.22) 2px,
+    transparent 8px,
+    transparent 48px
+  );
+  animation: moveBackground 13s linear infinite;
+}
+body::after {
+  /* افکت نور ملایم قرمز */
+  background: radial-gradient(circle at 80% 20%, rgba(255,0,55,0.17), transparent 55%),
+              radial-gradient(circle at 12% 70%, rgba(255,0,55,0.10), transparent 50%);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 400px 400px; }
+}
+
+/* استایل شیشه‌ای (glassmorphism) */
+.glass-container {
+  margin: 7vw auto;
+  max-width: 430px;
+  padding: 2.5em 2em 2em 2em;
+  border-radius: 2em;
+  background: rgba(45, 40, 55, 0.58);
+  box-shadow: 0 8px 32px 0 rgba(31, 12, 32, 0.33);
+  backdrop-filter: blur(16px) saturate(160%);
+  border: 2.5px solid rgba(255,0,55,0.15);
+  outline: 2.5px solid rgba(255,0,55,0.21);
+  outline-offset: -6px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  box-shadow:
+    0 4px 40px 0 rgba(255,0,55,0.13),
+    0 1.5px 15px -2px rgba(255,0,55,0.18) inset;
+  /* برای حالت استوانه */
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.glass-container:hover {
+  box-shadow:
+    0 6px 60px 0 rgba(255,0,55,0.18),
+    0 2.5px 20px -2px rgba(255,0,55,0.28) inset;
+}
+
+.glass-container h1, .glass-container p {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,0,55,0.09), 0 2px 8px #000;
+  margin-bottom: 1.2em;
+}
+
+.glass-container h1 {
+  font-size: 2.1em;
+  margin-bottom: 0.8em;
+}
+
+.glass-container p {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.glass-container a {
+  color: #ff0037;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.glass-container a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .glass-container {
+    max-width: 92vw;
+    padding: 1.5em 1em 1.2em 1em;
+  }
+}
